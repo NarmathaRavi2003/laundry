@@ -55,11 +55,11 @@ class Report:
 
             #to append the total cost daily.
             report_list.clear()
-            report_list.append(lst2_tot)
-                           
+            report_list.append(lst2_tot)            
             with open("daily.csv",'a') as f1:
                 write = writer(f1)
-                write.writerow(report_list)
+                rows = [[f"Date:{present_date} Cost:{report_list[0]}"]]
+                write.writerows(rows)
             f1.close()
         
 
