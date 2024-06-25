@@ -1,14 +1,14 @@
 from tkinter import *
 from csv import *
-import mainn
-import orderr
+
+
 
 class login_screen:
-
+    
     b = 0
 
     def getEntry(self):
-
+        import orderr
         details_list = []
         
         def openorder():
@@ -59,7 +59,7 @@ class login_screen:
             
     
     def login(self):
-
+        import mainn
         self.root7 = Tk()
         self.root7.geometry('500x500')
         
