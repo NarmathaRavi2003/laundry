@@ -1,5 +1,5 @@
 from tkinter import *
-import mainn
+
 from csv import *
 
 
@@ -9,6 +9,7 @@ class registerscrn:
     a , b , c , d , e = 0 , 0 , 0 , 0 , 0
 
     def backfn1(self):
+            import mainn
             self.root.destroy()
             ms=mainn.mainscr()
             ms.screen()
@@ -39,36 +40,36 @@ class registerscrn:
 
         if '@' not in mail and self.e == 0 and len(mail) > 0:
             # condition for gmail.
-            self.e = 1
+            #self.e = 1
             error = Label(self.root ,text = "invalid input!" , fg = "red")
             error.place(x = 380 , y = 180)
 
-        if name.isalpha() is not True and len(name) > 0:
+        elif name.isalpha() is not True and len(name) > 0:
             # condition for name.
             if self.d == 0:
                 self.d = 1
                 error = Label(self.root ,text = "invalid input!" , fg = "red")
                 error.place(x = 380 , y = 130)
 
-        if len(phoneno) > 0 and (phoneno.isdigit() is not True or len(phoneno) != 10):
+        elif len(phoneno) > 0 and (phoneno.isdigit() is not True or len(phoneno) != 10):
             # condition for phone number.
-            if self.a == 0:
+            #if self.a == 0:
                 self.a = 1
                 error = Label(self.root ,text = "invalid input!" , fg = "red")
                 error.place(x = 380 , y = 280)
 
-        if  len(rollno) > 0 and(rollno.isdigit() is not True or len(rollno)!=7):
+        elif  len(rollno) > 0 and(rollno.isdigit() is not True or len(rollno)!=7):
             #condition for rollno.
-            if self.c == 0:
+            #if self.c == 0:
                 self.c = 1
                 error = Label(self.root ,text = "invalid input!" , fg = "red")
                 error.place(x = 380 , y = 335)
 
         elif name == '' or mail == '' or dept == '' or phoneno == '' or rollno == '':
             # condition for empty input.
-            if self.b == 0:
+            #if self.b == 0:
                 self.b = 1
-                error2 = Label(self.root ,text = "enter the edtails!" , fg = "red")
+                error2 = Label(self.root ,text = "enter the details!" , fg = "red")
                 error2.place(x = 220 , y = 450)
 
         else:
