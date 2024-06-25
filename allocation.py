@@ -1,10 +1,10 @@
 #M.Padhma Priya and R.Narmatha
 #312215002074 and 3122215002069
-
+from datetime import *
 import tkinter as tk
 from tkinter import messagebox
 from Qfunctions import PQueue
-
+from csv import *
 class Allocation:
     def allocate(self):
         
@@ -42,7 +42,16 @@ class Allocation:
                    answer.config(text="Enter 7 digit register number")
             else:
                 answer.config(text="Enter a number")
-
+            with open("worker.csv",'a') as f:
+                write=writer(f)
+                if qno:
+                    fig=1
+                else:
+                    fig=2
+                date1=date.today()
+                dumm=[[f"Date:{date1} Numofclothes:{numofclothes} RegisterNumber:{regnum} WorkerNo:{fig}"]]
+                write.writerows(dumm)
+            f.close()
 
         answer=tk.Label(window,text="")
         answer.place(x=440,y=100)
