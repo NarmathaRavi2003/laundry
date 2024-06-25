@@ -1,7 +1,7 @@
 from tkinter import *
 from csv import *
 import testq
-
+from datetime import *
 class Trans_id:
 
     def __init__(self):
@@ -69,6 +69,7 @@ class Trans_id:
 
         templist.append(self.id)
         templist.append(self.tc)
+        templist.append(date.today())
         with open("report.csv","a") as f:
             write=writer(f)
             write.writerow(templist)
