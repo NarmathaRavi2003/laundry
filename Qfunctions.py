@@ -47,7 +47,7 @@ class PQueue:
             answer = self._data2[self._front2]
             self._data2[self._front2] = None
             self._front2 = (self._front2 + 1) % len(self._data2)
-            self._size1 -= 1
+            self._size2 -= 1
             return answer
         
 
