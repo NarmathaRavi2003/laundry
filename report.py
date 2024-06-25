@@ -41,7 +41,14 @@ class Report:
         pre_day = temp[0][0]
 
         #**********************************condition for daily report********************************
-
+        cost1=0
+        with open("report.csv","r") as f:
+            a=reader(f)
+            for i in a:
+                if i!=[]:
+                    if i[2]==str(present_date):
+                        cost1+=int(i[1])
+        f.close()
         if pre_day != present_day:
             l=[]
             l.append(pre_day)
@@ -52,14 +59,15 @@ class Report:
                 write = writer(f)
                 write.writerow(l)
             f.close()
-
+            
             #to append the total cost daily.
             report_list.clear()
-            report_list.append(lst2_tot)            
+            report_list.append(lst2_tot)
+            rows = [present_date,cost1]            
             with open("daily.csv",'a') as f1:
                 write = writer(f1)
-                rows = [[f"Date:{present_date} Cost:{report_list[0]}"]]
-                write.writerows(rows)
+                #rows = [[{present_date},{cost1}]]
+                write.writerow(rows)
             f1.close()
         
 
